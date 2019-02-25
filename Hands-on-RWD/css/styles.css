@@ -29,7 +29,7 @@ body {
   line-height: 1; }
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section, main {
   display: block; }
 
 nav ul {
@@ -105,9 +105,20 @@ body {
 
 /* -------------------------- HEADER -------------------------- */
 header {
-  background-color: #424e64;
-  color: #bbc2ca;
+  background-color: #66000a;
+  color: #ccccb8;
   padding: 1rem 2%; }
+  header form {
+    float: right; }
+  header form input {
+    width: 6rem;
+    border-radius: 10px;
+    margin-right: 2%;
+    padding: .2rem;
+    border: none;
+    transition: width .5s; }
+  header form input:focus {
+    width: 8rem; }
   header h1 {
     font-size: 2rem;
     font-weight: 300; }
@@ -116,30 +127,61 @@ header {
     font-weight: 300; }
 
 /* -------------------------- MAIN -------------------------- */
-main figure.banner {
-  width: 100%; }
-main figure.banner img {
-  width: 100%; }
-main h1 {
-  font-size: 2rem;
-  margin: 1rem 0 0 2%; }
-main hr.fadeAway {
-  background: linear-gradient(to right, #424e64 0%, rgba(41, 137, 216, 0.5) 50%, rgba(32, 124, 202, 0.49) 51%, rgba(66, 78, 100, 0) 100%);
-  height: 2px;
-  border: none;
-  margin: 0 2%; }
-main figure.photo {
-  width: 96%;
-  margin: 0.5rem 2%; }
-main figure.photo img {
-  width: 100%; }
-main figure.photo figcaption {
-  text-align: center;
-  color: #424e64; }
+main {
+  background-color: #fff; }
+  main figure.banner {
+    width: 100%; }
+  main figure.banner img {
+    width: 100%; }
+  main h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0 2%; }
+  main h2 {
+    font-size: 1.5rem;
+    margin: 0.75rem 0 0 2%;
+    color: #99000f; }
+  main h3 {
+    font-size: 1.2rem;
+    color: #cc0014; }
+  main p {
+    line-height: 130%;
+    color: #331912; }
+  main hr.fadeAway {
+    background: linear-gradient(to right, #424e64 0%, rgba(41, 137, 216, 0.5) 50%, rgba(32, 124, 202, 0.49) 51%, rgba(66, 78, 100, 0) 100%);
+    height: 2px;
+    border: none;
+    margin: 0 2%; }
+  main figure.photo {
+    width: 96%;
+    margin: 0.5rem 2%; }
+  main figure.photo img {
+    width: 100%; }
+  main figure.photo figcaption {
+    text-align: center;
+    color: #66000a; }
+  main div.blog article {
+    margin: 0.5rem 2%;
+    width: 96%; }
+  main div.pop {
+    background-color: #8c9c38;
+    text-align: center;
+    clear: both;
+    padding: 1rem 0; }
+    main div.pop .title {
+      font-size: 2.5rem; }
+    main div.pop .subtitle {
+      font-size: 2rem;
+      font-weight: 700; }
+    main div.pop .copy {
+      padding: .5rem 0; }
+    main div.pop .copy span {
+      font-size: 3rem;
+      color: #66000a;
+      font-weight: 700; }
 
 /* -------------------------- NAVIGATION -------------------------- */
 nav {
-  background-color: #bbc2ca;
+  background-color: #ccccb8;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3); }
   nav ul li {
     float: left;
@@ -152,26 +194,26 @@ nav {
     text-align: center;
     font-weight: 700;
     padding: .5rem 0;
-    color: #424e64;
+    color: #66000a;
     text-decoration: none; }
   nav ul li.active a {
-    background-color: #9ea8b4; }
+    background-color: #b7b79a; }
   nav ul li a:hover {
-    color: #bbc2ca;
-    background-color: #424e64;
+    color: #ccccb8;
+    background-color: #66000a;
     transition: background 0.75s ease, color 0.75s ease; }
 
 /* -------------------------- FOOTER -------------------------- */
 footer {
   width: 100%;
-  background-color: #424e64; }
+  background-color: #66000a; }
   footer p {
     text-align: center;
-    color: #bbc2ca;
+    color: #ccccb8;
     padding: .75rem 0;
     font-size: .9rem; }
   footer p a {
-    color: #bbc2ca;
+    color: #ccccb8;
     text-decoration: none; }
 
 /*----- Clearfix: Force an Element not to collapse -----*/
@@ -180,13 +222,19 @@ footer {
   display: table;
   clear: both; }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 35rem) {
   /* -------------------------- MAIN -------------------------- */
   main figure.photo {
     width: 46%;
     margin: 0.5rem 2%;
-    float: left; } }
-@media only screen and (min-width: 1140px) {
+    float: left; }
+  main div.blog article {
+    float: left;
+    width: 46%; }
+  main div.blog article:nth-child(2n + 1) {
+    clear: left; } }
+@media only screen and (min-width: 60rem) {
+  /* -------------------------- BODY -------------------------- */
   /* -------------------------- NAVIGATION -------------------------- */
   nav ul {
     margin-left: 2%;
@@ -202,5 +250,15 @@ footer {
   main figure.photo {
     width: 21%;
     margin: 0.5rem 2%;
-    float: left; } }
+    float: left; }
+  main div.blog article {
+    width: 29.33%;
+    float: left; }
+  main div.blog article:nth-child(2n + 1) {
+    clear: none; }
+  main div.blog article:nth-child(3n + 1) {
+    clear: left; }
+  main section {
+    max-width: 60rem;
+    margin: 0 auto; } }
 /* end media query */

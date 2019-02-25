@@ -1,3 +1,8 @@
+/* -------------------------- BODY -------------------------- */
+
+
+
+
 /* -------------------------- NAVIGATION -------------------------- */
 nav {
     
@@ -23,5 +28,23 @@ main {
         width: 25% - $gutterdbl; 
         margin: .5rem $gutter; 
         float: left;}
+    
+    div.blog article {
+        width: 33.33% - $gutterdbl;
+        float: left;
+    } // end of blog
+    
+    div.blog article:nth-child(2n + 1) {
+        clear: none;
+    }
+    
+    div.blog article:nth-child(3n + 1) {
+        clear: left;
+    }
+    
+    section {
+        max-width: 60rem; 
+        margin: 0 auto;
+    }
     
 } // end of main
